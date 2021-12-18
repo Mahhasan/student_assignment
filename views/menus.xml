@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Top Menu -->
+        <menuitem name="Student Assignment"
+            id="menu_action_student_assignment"
+            sequence="1" />
+
+
+        <!-- Master Data -->
+        <menuitem name="Student"
+            id="menu_action_student"
+            parent="menu_action_student_assignment"
+            action="action_student_view"
+            sequence="100" />
+        <menuitem name="Assignment"
+            id="menu_action_assignment"
+            parent="menu_action_student_assignment"
+            action="action_assignment_view"
+            sequence="100" />
+
+
+    </data>
+</odoo>

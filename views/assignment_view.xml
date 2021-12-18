@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!--Search View-->
+        <record id="assignment_search_view" model="ir.ui.view">
+            <field name="name">assignment.search.view</field>
+            <field name="model">assignment</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <!--Tree View-->
+        <record id="assignment_tree_view" model="ir.ui.view">
+            <field name="name">assignment.tree.view</field>
+            <field name="model">assignment</field>
+            <field name="arch" type="xml">
+                <tree string="Assignment">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Form View-->
+        <record id="assignment_form_view" model="ir.ui.view">
+            <field name="name">assignment.form.view</field>
+            <field name="model">assignment</field>
+            <field name="arch" type="xml">
+                <form string="Assignment">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="deadline"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="assign_to"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!--Act Window & Menu Configuration-->
+        <record id="action_assignment_view" model="ir.actions.act_window">
+            <field name="name">Assignment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">assignment</field>
+            <field name="domain">[]</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="assignment_tree_view"/>
+        </record>
+
+    </data>
+</odoo>
